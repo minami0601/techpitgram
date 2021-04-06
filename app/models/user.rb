@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :likes
 
   has_many :comments
+
+
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -14,6 +16,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :username, uniqueness: true, presence: true, length: { maximum: 50 }
 
+  mount_uploader :profile_photo, ImageUploader
+  
   def update_without_current_password(params, *options)
 
     if params[:password].blank? && params[:password_confirmation].blank?

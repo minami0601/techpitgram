@@ -16,6 +16,11 @@
             <%= f.label :email, "メールアドレス" %>
             <%= f.email_field :email, autofocus: true, class: "form-control" %>
           </div>
+          <%= image_tag avatar_url(@user), class: "round-img" %>
+          <div class="form-group">
+            <%= f.label :profile_photo, "画像" %>
+            <%= f.file_field :profile_photo, autofocus: true, class: "form-control" %>
+          </div>
 
           <div class="form-group">
             <%= f.label :password, "パスワード" %>
@@ -26,6 +31,7 @@
             <%= f.label :password_confirmation, "パスワードの確認" %>
             <%= f.password_field :password_confirmation, autofocus: "off", class: "form-control" %>
           </div>
+
 
           <%= f.submit "変更する", class: "btn btn-primary" %>
         <% end %>
