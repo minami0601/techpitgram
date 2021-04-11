@@ -1,0 +1,24 @@
+<div class="card-header">
+  フォロワー
+</div>
+<ul class="list-group list-group-flush">
+  <% @users.each do |user| %>
+      <li class="list-group-item user-item">
+          <div>
+              <%= link_to user_path(user), class: "no-text-decoration" do %>
+                  <%= image_tag avatar_url(user), class: "post-profile-icon mx-3" %>
+              <% end %>
+              <%= link_to user_path(user), class: "black-color no-text-decoration",
+                  title: user.name do %>
+                  <strong><%= user.username %></strong>
+              <% end %>
+          </div>
+          <% if user != current_user %>
+            <div class="index-follow">
+                follow
+            </div>
+          <% end %>
+      </li>
+  <% end %>
+</ul>
+</div>
