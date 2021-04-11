@@ -31,3 +31,29 @@
     cursor: pointer;
   }
 }
+.sec-follow {
+  display: flex;
+  align-items: center;
+}
+
+.follow-left {
+  margin-left: 100px;
+}
+
+.follow {
+  margin-left: 20px;
+  line-height: 38px;
+}
+.follower {
+  line-height: 38px;
+}
+.following-btn {
+  margin-left: auto;
+  &:hover {
+    color: #007bff;
+    border-color: #007bff;
+    background-color: #fff;
+  }
+  
+}
+

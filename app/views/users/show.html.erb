@@ -4,6 +4,21 @@
       <%= image_tag avatar_url(@user), class: "round-img" %>
     </div>
     <div class="col-md-8">
+      <div class="row sec-follow">
+        <div class="follower">
+            <%= link_to followers_user_path(@user.id) do %>
+                <p style="color: black;">フォロワー<span id="follower"><%= @user.followers.count %></span>人<p>
+            <% end %>
+        </div>
+        <div class="follow">
+            <%= link_to following_user_path(@user.id) do %>
+                <p style="color: black;">フォロー<span id="follow"><%= @user.following.count %></span>人<p>
+            <% end %>
+        </div>
+        <div class="follow-left">
+            <%= render "follow_form" %>
+        </div>      
+      </div>
       <div class="row">
         <h1><%= @user.username %></h1>
         <% if @user == current_user %>
@@ -14,7 +29,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">設定</h5>
+                p class="modal-title" id="exampleModalLabel">設定<p>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
