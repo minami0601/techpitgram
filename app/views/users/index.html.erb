@@ -17,7 +17,7 @@
             <% if user != current_user %>
               <div class="index-follow">
                   <% if user_signed_in? && user != current_user %>
-                    <div id="follow_form">
+                    <div id="follow_form<%= user.id.to_s %>">
                       <% if current_user.following?(user) %>
                         <%= form_for(current_user, url: relationship_path(user), method: :delete, remote: true) do |f| %>
                           <%= f.submit "フォロー", class: "btn btn-primary" %>

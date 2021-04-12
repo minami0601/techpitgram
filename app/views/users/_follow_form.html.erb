@@ -1,6 +1,6 @@
 <!-- フォローボタン(MYPAGEのユーザーがcurrent_userでなければ表示------------------------------------------------------>
 <% if user_signed_in? && @user != current_user %>
-  <div id="follow_form">
+  <div id="follow_form<%= @user.id.to_s %>">
     <% if current_user.following?(@user) %>
       <%= render "unfollow" %>
     <% else %>
